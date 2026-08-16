@@ -3650,15 +3650,15 @@
     "Volume": "$79,600.00"
   },
   "state": {
-    "StartTime": "2026-08-05T23:59:32Z",
-    "EndTime": "2026-08-05T23:59:35Z",
+    "StartTime": "2026-08-07T05:16:18Z",
+    "EndTime": "2026-08-07T05:16:20Z",
     "RuntimeError": "",
     "StackTrace": "",
     "LogCount": "4",
     "OrderCount": "1",
     "InsightCount": "0",
     "Name": "local",
-    "Hostname": "e1e0b777fc18",
+    "Hostname": "11919999d9f8",
     "Status": "Completed"
   },
   "algorithmConfiguration": {
@@ -3746,5 +3746,26 @@
       "drawdownRecovery": "91"
     },
     "closedTrades": []
-  }
+  },
+  "analysis": [
+    {
+      "name": "PortfolioMarginUsageAnalysis",
+      "issue": "The algorithm sometimes only utilizes a small proportion of the margin available.",
+      "sample": "Number of days when the 3-day SMA of the margin usage drops below 50%: 364",
+      "solutions": [
+        "Adjust the strategy logic or position sizing to utilize more margin.",
+        "If the algorithm logic leads to periods of time when the portfolio sits in cash, consider holding a \"risk-free\" asset during these periods."
+      ]
+    },
+    {
+      "name": "StatisticalSignificanceOfDailyReturnsAnalysis",
+      "issue": "The distribution of the strategy's daily returns in excess of the benchmark's daily returns has a p-value above 0.05. Therefore, we fail to reject the null hypothesis that the mean of this distribution is above zero.",
+      "sample": {
+        "pValue": 0.5
+      },
+      "solutions": [
+        "Try adjusting the trading rules and/or the universe to get a strategy that outperforms the benchmark."
+      ]
+    }
+  ]
 }
