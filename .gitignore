@@ -14,3 +14,7 @@ play**/
 **/*.zip
 *.tar
 *.gz
+DATA-ROOT/
+data/
+backtest_result.png
+app/src/backtest_result.png

@@ -109,7 +109,7 @@ http://localhost:8000/api/health
 docker compose -f docker-compose.lean.yml run --rm samsung-backtest
 ```
 
-결과 파일과 `orders.csv`는 `lean-results/`에 생성됩니다. 기본 기간은 2024년이며,
+결과 파일과 `orders.csv`는 `lean-results/`에 생성됩니다. 새 런 산출물은 커밋하지 않습니다. 이미 있는 요약만 보려면 Docker 없이 `python scripts/lean_summary.py` 를 실행합니다. 기본 기간은 2024년이며,
 다른 기간을 지정하려면 다음처럼 실행합니다.
 
 ```bash
